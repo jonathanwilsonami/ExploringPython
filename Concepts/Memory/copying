@@ -1,0 +1,23 @@
+#Deep Copying vs Shallow Copying
+#Shallow Copy - The copy process does not recurse. 
+#Deep Copy - Does a full recursive copy resulting in an independent clone. Copying is slower. 
+#Shallow copying becomes a problem when trying to copy more complex collections 
+
+import copy as c
+
+list1 = [[1,2,3], [4,5,6]]
+print("original list", list1)
+
+#Shallow copy
+list1Shallow = c.copy(list1)
+print("Shallow copy", list1Shallow)
+
+#Deep Copy
+list1Deep = c.deepcopy(list1)
+print("Deep copy", list1Deep)
+
+#Make change to the lists
+list1[0][1] = "Change"
+print("original list>>>>", list1)
+print("Shallow copy>>>>", list1Shallow)
+print("Deep copy>>>>", list1Deep)
